@@ -14,22 +14,6 @@ Given a single in-the-wild photo, SplatShot generates a photorealistic 3D Gaussi
 
 ---
 
-## Method
-
-![Method Overview](assets/method.png)
-
-1. **Base selection** — A DINO + skin-tone matcher picks the closest pre-built face from a library of 300 NeRSemble base models.
-2. **3DGS-guided denoising** — Over a DDIM trajectory (25 steps), a diffusion UNet predicts per-view images conditioned on the target identity (IP-Adapter-Plus-Face + ControlNet-Pose + ControlNet-Seg). Each prediction refits the 3DGS; the photometric loss is backpropagated into the noise estimate to enforce 3D consistency across views.
-3. **Semantic Delta Injection (SDI)** — A second UNet pass on the base identity isolates identity-specific noise; the scaled delta steers generation toward the target face while preserving plausible geometry.
-
----
-
-## Results
-
-![Qualitative Comparison](assets/comparison.png)
-
----
-
 ## Setup
 
 ### 1. Environment
@@ -50,20 +34,14 @@ pip install -r requirements.txt
 
 ### 2. External model weights
 
-**IP-Adapter-Plus-Face** (identity conditioning):
-
-```bash
-git clone https://github.com/tencent-ailab/IP-Adapter
-# Download IP-Adapter-Plus-Face weights per their README.
-# Expected path: IP-Adapter/models/ip-adapter-plus-face_sd15.bin
-```
-
 **Face parsing** (BiSeNet, for ControlNet segmentation):
 
 ```bash
 git clone https://github.com/zllrunning/face-parsing.PyTorch
 # Download the pretrained weight to: face-parsing.PyTorch/res/cp/79999_iter.pth
 ```
+
+IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace Hub on first run.
 
 ### 3. Base 3DGS library
 
