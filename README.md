@@ -118,7 +118,6 @@ SplatShot/
 ├── download_bases.py              — download pre-built base 3DGS models
 ├── precompute_base_embeddings.py  — one-time: DINO index of base models
 ├── precompute_assets.py           — one-time: ControlNet assets for all bases
-├── evaluate_metrics.py            — CSIM / CV-CSIM / AKD / FID / CLIP-IQA
 ├── requirements.txt
 ├── core/
 │   ├── gs_model.py               — GaussianModel, GaussianRenderer, GaussianTrainer
