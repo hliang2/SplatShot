@@ -1,0 +1,31 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.23.0
+pillow>=9.0.0
+
+# Diffusion models
+diffusers>=0.24.0
+transformers>=4.30.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+
+# 3D Gaussian Splatting
+gsplat>=0.1.0
+
+# Face processing (for face swap mode)
+opencv-python>=4.7.0
+mediapipe>=0.10.0
+insightface>=0.7.3
+onnxruntime>=1.15.0
+
+# Utilities
+tqdm>=4.65.0
+imageio>=2.31.0
+scipy>=1.10.0
+
+# Base model download
+huggingface_hub>=0.20.0
+
+# Optional but recommended
+# xformers>=0.0.20  # For memory-efficient attention
