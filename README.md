@@ -52,7 +52,7 @@ In the current setup, we fix the base template to be NeRSemble subject 306. Full
 ## Inference
 
 ```bash
-CUDA_HOME=/usr/local/cuda python inference.py --image ./photo.jpg
+python inference.py --image ./photo.jpg
 ```
 
 | Flag | Default | Description |
