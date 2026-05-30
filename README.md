@@ -22,8 +22,8 @@ Given a single in-the-wild photo, SplatShot generates a photorealistic 3D Gaussi
 conda create -n splatshot python=3.10 -y
 conda activate splatshot
 
-# PyTorch — adjust the cu118 tag to match your CUDA driver
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+# PyTorch — adjust the cu121 tag to match your CUDA driver
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 
 # 3DGS rasterizer
 pip install gsplat
@@ -45,7 +45,7 @@ IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace 
 
 ### 3. Base 3DGS template
 
-The template PLY and precomputed assets for NeRSemble subject 306 are bundled directly in this repo (`precomputed_assets/`). No separate download needed.
+In the current setup, we fix the base template to be NeRSemble subject 306. Full 3DGS bases will be uploaded soon.
 
 ---
 
