@@ -31,6 +31,10 @@ NERSEMBLE_PLY   = "/scratch/shared/nersemble_3dgs_no_normalize"
 BASE_EMBEDDINGS = "./base_embeddings.npz"
 PRECOMPUTED_DIR = "./precomputed_assets"
 
+# Fixed template: always start from NeRSemble subject 306.
+# (DINO-based automatic selection is commented out below.)
+FIXED_BASE = "306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine"
+
 # ---------------------------------------------------------------------------
 # Fixed generation hyperparameters (paper defaults)
 # ---------------------------------------------------------------------------
@@ -284,12 +288,16 @@ def main():
     print("SplatShot — 3D Avatar Generation")
     print("="*60)
 
-    if args.seq_name:
-        seq_name = args.seq_name
-        print(f"Base sequence (provided): {seq_name}")
-    else:
-        print("\nStep 1/5  Finding best base sequence...")
-        seq_name = find_best_base(str(image_path))
+    seq_name = FIXED_BASE
+    print(f"Base sequence (fixed): {seq_name}")
+
+    # Automatic DINO-based base selection is disabled in this release.
+    # To re-enable, uncomment the block below and run precompute_base_embeddings.py first.
+    # if args.seq_name:
+    #     seq_name = args.seq_name
+    # else:
+    #     print("\nStep 1/5  Finding best base sequence...")
+    #     seq_name = find_best_base(str(image_path))
 
     target_dir   = _resolve_seq_dir(NERSEMBLE_DATA, seq_name)
     ply_dir      = _resolve_seq_dir(NERSEMBLE_PLY,  seq_name)

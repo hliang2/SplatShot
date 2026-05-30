@@ -43,33 +43,27 @@ git clone https://github.com/zllrunning/face-parsing.PyTorch
 
 IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace Hub on first run.
 
-### 3. Base 3DGS library
+### 3. Base 3DGS template
 
-SplatShot requires ~300 pre-built NeRSemble base face models (~6 GB total).  
-Download them from HuggingFace Hub:
+This release uses a single fixed neutral template (NeRSemble subject 306).  
+Download the template PLY and its precomputed camera assets from HuggingFace Hub:
 
 ```bash
 python download_bases.py --output_dir ./nersemble_bases
 ```
 
-Then update the two path constants at the top of `inference.py`:
+Then update the path constants at the top of `inference.py`:
 
 ```python
-NERSEMBLE_DATA = "/path/to/nersemble-data/EXP-1-head-frame0_export"   # NeRSemble images + cameras
-NERSEMBLE_PLY  = "./nersemble_bases"                                    # downloaded PLY files
+NERSEMBLE_DATA = "/path/to/nersemble-data/EXP-1-head-frame0_export"   # NeRSemble cameras
+NERSEMBLE_PLY  = "./nersemble_bases"                                    # template PLY
 ```
 
-**One-time precomputation** (~5–60 min, done once per machine):
+**One-time precomputation** (only needed if you change the template):
 
 ```bash
-# Build DINO embedding index for fast base matching (~5 min)
-python precompute_base_embeddings.py
-
-# Pre-render ControlNet conditioning assets for all bases (~30–60 min, optional)
 python precompute_assets.py
 ```
-
-If you skip the second step, assets are computed on the fly the first time each base is used (~2 min per new base).
 
 ---
 
@@ -84,7 +78,6 @@ CUDA_HOME=/usr/local/cuda python inference.py --image ./photo.jpg
 | `--image` | required | Path to input photo |
 | `--output_dir` | `./output` | Output directory |
 | `--device` | `cuda` | `cuda` or `cpu` |
-| `--seq_name` | auto | Skip DINO matching; use this NeRSemble sequence directly |
 | `--num_views` | all | Subsample to N views (fewer = faster, less 3D coverage) |
 
 Results are written to `output/<image_stem>/`:
@@ -115,9 +108,8 @@ output/<image_stem>/
 ```
 SplatShot/
 ├── inference.py                   — single entry point
-├── download_bases.py              — download pre-built base 3DGS models
-├── precompute_base_embeddings.py  — one-time: DINO index of base models
-├── precompute_assets.py           — one-time: ControlNet assets for all bases
+├── download_bases.py              — download the base template from HuggingFace
+├── precompute_assets.py           — one-time: ControlNet assets for the base template
 ├── requirements.txt
 ├── core/
 │   ├── gs_model.py               — GaussianModel, GaussianRenderer, GaussianTrainer
