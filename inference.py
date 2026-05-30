@@ -299,13 +299,9 @@ def main():
     #     print("\nStep 1/5  Finding best base sequence...")
     #     seq_name = find_best_base(str(image_path))
 
-    target_dir   = _resolve_seq_dir(NERSEMBLE_DATA, seq_name)
-    ply_dir      = _resolve_seq_dir(NERSEMBLE_PLY,  seq_name)
-    seq_name     = target_dir.name
-    original_ply = ply_dir / "ply" / "point_cloud_6999.ply"
-
+    original_ply = Path(PRECOMPUTED_DIR) / seq_name / "point_cloud.ply"
     if not original_ply.exists():
-        sys.exit(f"Base PLY not found: {original_ply}")
+        sys.exit(f"Base PLY not found: {original_ply}\nRun git clone again — the template PLY should be bundled in precomputed_assets/.")
 
     # ----------------------------------------------------------------
     # 2. Set up output directory
@@ -320,12 +316,16 @@ def main():
     shutil.copy(image_path, out_dir / f"input{image_path.suffix}")
     shutil.copy(original_ply, out_dir / "base.ply")
 
-    # Camera folder: symlink to the COLMAP dataset
+    # Camera folder: symlink to the NeRSemble dataset (optional, needed for rendering)
     if not cameras_dir.exists():
-        cameras_dir.symlink_to(target_dir.resolve())
+        nersemble_seq = Path(NERSEMBLE_DATA) / seq_name
+        if nersemble_seq.exists():
+            cameras_dir.symlink_to(nersemble_seq.resolve())
+        else:
+            cameras_dir.mkdir()
 
     print(f"Output directory: {out_dir}")
-    print(f"Matched base:     {seq_name}")
+    print(f"Base template:    {seq_name}")
 
     # ----------------------------------------------------------------
     # 3. Load precomputed assets (compute on the fly if missing)

@@ -45,25 +45,7 @@ IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace 
 
 ### 3. Base 3DGS template
 
-This release uses a single fixed neutral template (NeRSemble subject 306).  
-Download the template PLY and its precomputed camera assets from HuggingFace Hub:
-
-```bash
-python download_bases.py --output_dir ./nersemble_bases
-```
-
-Then update the path constants at the top of `inference.py`:
-
-```python
-NERSEMBLE_DATA = "/path/to/nersemble-data/EXP-1-head-frame0_export"   # NeRSemble cameras
-NERSEMBLE_PLY  = "./nersemble_bases"                                    # template PLY
-```
-
-**One-time precomputation** (only needed if you change the template):
-
-```bash
-python precompute_assets.py
-```
+The template PLY and precomputed assets for NeRSemble subject 306 are bundled directly in this repo (`precomputed_assets/`). No separate download needed.
 
 ---
 

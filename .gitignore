@@ -5,8 +5,14 @@ __pycache__/
 *.npz
 *.npy
 nersemble_bases/
-precomputed_assets/
 base_embeddings.npz
+# exclude precomputed_assets except the bundled 306 template
+precomputed_assets/*
+!precomputed_assets/306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine/
+precomputed_assets/306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine/*
+!precomputed_assets/306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine/*.npz
+!precomputed_assets/306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine/*.json
+!precomputed_assets/306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine/*.ply
 *.egg-info/
 dist/
 build/
