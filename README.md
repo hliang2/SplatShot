@@ -22,14 +22,11 @@ Given a single in-the-wild photo, SplatShot generates a photorealistic 3D Gaussi
 conda create -n splatshot python=3.10 -y
 conda activate splatshot
 
-# PyTorch — adjust the cu121 tag to match your CUDA driver
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# PyTorch (cu121 — adjust if your CUDA driver differs)
+pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://download.pytorch.org/whl/cu121
 
-# 3DGS rasterizer
-pip install gsplat
-
-# Remaining dependencies
-pip install -r requirements.txt
+# Remaining dependencies (use --no-build-isolation so CUDA extensions compile against the torch above)
+pip install -r requirements.txt --no-build-isolation
 ```
 
 ### 2. External model weights
