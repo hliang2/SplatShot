@@ -42,7 +42,12 @@ IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace 
 
 ### 3. Base 3DGS template
 
-In the current setup, we fix the base template to be NeRSemble subject 333. Full 3DGS bases will be uploaded soon.
+Two base templates are bundled in this repo. Set `FIXED_BASE` at the top of `inference.py` to select one:
+
+- `333_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine` — recommended for **short-hair** subjects (default)
+- `288_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine` — recommended for **long-hair** subjects
+
+Full 3DGS base library will be released soon.
 
 ---
 
