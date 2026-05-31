@@ -2,7 +2,11 @@
 Utility modules for SplatShot
 """
 
-from .colmap import Parser
+try:
+    from .colmap import Parser
+    COLMAP_AVAILABLE = True
+except ImportError:
+    COLMAP_AVAILABLE = False
 
 # Face utilities (only import if needed for face swap mode)
 try:
