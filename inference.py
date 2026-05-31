@@ -33,7 +33,7 @@ PRECOMPUTED_DIR = "./precomputed_assets"
 
 # Fixed template: always start from NeRSemble subject 306.
 # (DINO-based automatic selection is commented out below.)
-FIXED_BASE = "306_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine"
+FIXED_BASE = "333_EXP-1_v16_DS4_whiteBg_staticOffset_maskBelowLine"
 
 # ---------------------------------------------------------------------------
 # Fixed generation hyperparameters (paper defaults)
