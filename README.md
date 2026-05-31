@@ -19,6 +19,9 @@ Given a single in-the-wild photo, SplatShot generates a photorealistic 3D Gaussi
 ### 1. Environment
 
 ```bash
+git clone https://github.com/hliang2/SplatShot.git
+cd SplatShot
+
 conda create -n splatshot python=3.10 -y
 conda activate splatshot
 
