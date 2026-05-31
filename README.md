@@ -42,7 +42,7 @@ IP-Adapter and ControlNet weights are downloaded automatically from HuggingFace 
 
 ### 3. Base 3DGS template
 
-In the current setup, we fix the base template to be NeRSemble subject 306. Full 3DGS bases will be uploaded soon.
+In the current setup, we fix the base template to be NeRSemble subject 333. Full 3DGS bases will be uploaded soon.
 
 ---
 
