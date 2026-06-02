@@ -4,7 +4,7 @@
 
 ¹ Rice University &nbsp;·&nbsp; ² Samsung Research America
 
-[[Paper]](TODO) &nbsp;|&nbsp; [[Project Page]](TODO)
+[[Paper]](http://arxiv.org/abs/2606.01493) &nbsp;|&nbsp; [[Project Page]](TODO)
 
 ---
 
