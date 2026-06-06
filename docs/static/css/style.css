@@ -1,0 +1,67 @@
+/* ================================
+   SplatShot – Project Styles
+   ================================ */
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --dark-color: #343a40;
+  --light-bg: #f8f9fa;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding-top: 56px;
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  min-height: 380px;
+}
+.hero-section h1 {
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,.3);
+}
+.authors a {
+  color: #fff; text-decoration: none; margin: 0 10px; font-size: 1.05rem;
+}
+.authors a:hover { text-decoration: underline; }
+.affiliations { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+/* ---------- Sections ---------- */
+section { scroll-margin-top: 70px; }
+
+/* ---------- Cards ---------- */
+.card {
+  box-shadow: 0 4px 6px rgba(0,0,0,.08);
+  transition: transform .25s ease;
+  border-radius: 12px;
+}
+.card:hover { transform: translateY(-3px); }
+.card-title { font-weight: 600; }
+
+/* ---------- Buttons ---------- */
+.btn { padding: 10px 20px; font-weight: 500; border-radius: 25px; }
+
+/* ---------- Images ---------- */
+img { transition: transform .25s ease; }
+img:hover { transform: scale(1.01); }
+
+/* ---------- Citation ---------- */
+pre {
+  border-radius: 8px;
+  font-size: .88rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 1.2rem;
+  text-align: left;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 576px) {
+  .hero-section h1 { font-size: 2rem; }
+  .authors { font-size: .9rem; }
+}
