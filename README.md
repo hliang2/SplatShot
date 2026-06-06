@@ -4,7 +4,7 @@
 
 ¹ Rice University &nbsp;·&nbsp; ² Samsung Research America
 
-[[Paper]](http://arxiv.org/abs/2606.01493) &nbsp;|&nbsp; [[Project Page]](TODO) &nbsp;|&nbsp; [[CelebA-3D]](https://hliang2.github.io/celeba-3d/) (dataset using SplatShot)
+[[Paper]](http://arxiv.org/abs/2606.01493) &nbsp;|&nbsp; [[Project Page]](https://hliang2.github.io/SplatShot/) &nbsp;|&nbsp; [[CelebA-3D]](https://hliang2.github.io/celeba-3d/) (dataset using SplatShot)
 
 ---
 
