@@ -113,6 +113,22 @@ SplatShot/
 
 ---
 
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{liang2026splatshot,
+  title   = {SplatShot: 3D Face Avatar Generation from a Single Unconstrained Photo},
+  author  = {Liang, Hao and Ge, Zhixuan and Majee, Soumendu and Li, Joanna and
+             Veeraraghavan, Ashok and Balakrishnan, Guha},
+  journal = {arXiv preprint arXiv:2606.01493},
+  year    = {2026}
+}
+```
+
+---
+
 ## Acknowledgments
 
 - [gsplat](https://github.com/nerfstudio-project/gsplat) — 3DGS rasterization
