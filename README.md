@@ -137,3 +137,13 @@ If you find this work useful, please cite:
 - [ControlNet](https://github.com/lllyasviel/ControlNet) — pose and segmentation conditioning
 - [NeRSemble](https://github.com/tobias-kirschstein/nersemble) — base 3DGS face models
 - [face-parsing.PyTorch](https://github.com/zllrunning/face-parsing.PyTorch) — face segmentation
+
+---
+
+## License
+
+The source code in this repository is released under the [MIT License](LICENSE).
+Third-party components keep their own licenses: the base 3DGS face models in
+`precomputed_assets/` are derived from [NeRSemble](https://github.com/tobias-kirschstein/nersemble),
+and the face-parsing, IP-Adapter and ControlNet weights downloaded by the scripts are
+governed by the terms of their respective projects. Please review those terms before use.
